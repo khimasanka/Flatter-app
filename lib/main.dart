@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -41,9 +41,9 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {},
           ),
         ],
-        flexibleSpace: Image.asset(
-          "assets/nft.png",
-          fit: BoxFit.cover,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(5.0),
+          child: Container(),
         ),
       ),
     );
