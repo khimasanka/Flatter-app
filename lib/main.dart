@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
         body: const Center(
           child: Text(
-            "App Body..!",
+            "App Body...!",
             style: TextStyle(
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
