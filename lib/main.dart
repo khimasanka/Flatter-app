@@ -24,26 +24,44 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter'),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter'),
+          leading: IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {},
+          ),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.more_vert),
+              onPressed: () {},
+            ),
+          ],
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(Icons.directions_car),
+                text: 'Car',
+              ),
+              Tab(
+                icon: Icon(Icons.directions_transit),
+              ),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () {},
-          ),
-        ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(5.0),
-          child: Container(),
+        body: const TabBarView(
+          children: [
+            Icon(Icons.ice_skating),
+            Icon(Icons.adb_sharp),
+            Icon(Icons.media_bluetooth_off_sharp),
+          ],
         ),
       ),
     );
