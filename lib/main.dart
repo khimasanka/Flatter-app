@@ -41,6 +41,10 @@ class MyHomePage extends StatelessWidget {
             onPressed: () {},
           ),
         ],
+        flexibleSpace: Image.asset(
+          "assets/nft.png",
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
