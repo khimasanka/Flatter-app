@@ -58,12 +58,27 @@ class MyHomePage extends StatelessWidget {
           elevation: 22.0,
           backgroundColor: Colors.black87,
         ),
-        body: TabBarView(
-          children: [
-            tab1(),
-            const Icon(Icons.adb_sharp),
-            const Icon(Icons.media_bluetooth_off_sharp),
-          ],
+        body: Container(
+          color: Colors.yellowAccent,
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text(
+                'Text 1',
+                style: TextStyle(fontSize: 20),
+              ),
+              Text(
+                'Text 1',
+                style: TextStyle(fontSize: 20),
+              ),
+              Text(
+                'Text 1',
+                style: TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -75,7 +90,6 @@ Widget tab1() {
     padding: const EdgeInsets.only(top: 20.0, left: 20.0),
     width: double.infinity,
     color: Colors.red,
-    transform: Matrix4.rotationZ(0.1),
     child: const Text(
       'Car Widget Text',
       style: TextStyle(
