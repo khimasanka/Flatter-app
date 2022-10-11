@@ -1,116 +1,75 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
+    return const MaterialApp(
+      title: 'Test MaterialApp',
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _count = 0;
+
+  void clicked() {
+    setState(() {
+      _count = _count + 1;
+      print('$_count');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter'),
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.search),
-              onPressed: () {},
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Test App'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              'Counter',
+              style: TextStyle(fontSize: 20),
             ),
-            IconButton(
-              icon: const Icon(Icons.more_vert),
-              onPressed: () {},
+            Text(
+                'Counter'
             ),
           ],
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.directions_car),
-              ),
-              Tab(
-                icon: Icon(Icons.directions_transit),
-              ),
-              Tab(icon: Icon(Icons.directions_bike)),
-            ],
-          ),
-          elevation: 22.0,
-          backgroundColor: Colors.black87,
         ),
-        body: Container(
-          height: 200,
-          color: Colors.green,
-          child: Row(
-            children: [
-              const Text(
-                'Text 1',
-                style: TextStyle(fontSize: 20),
-              ),
-              const Text(
-                'Text 2',
-                style: TextStyle(fontSize: 20),
-              ),
-              const Text(
-                'Text 3',
-                style: TextStyle(fontSize: 20),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  Text(
-                    'Text 1',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    'Text 2',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    'Text 3',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          clicked();
+        },
       ),
     );
   }
 }
 
-Widget tab1() {
-  return Container(
-    padding: const EdgeInsets.only(top: 20.0, left: 20.0),
-    width: double.infinity,
-    color: Colors.red,
-    child: const Text(
-      'Car Widget Text',
-      style: TextStyle(
-        fontSize: 20.0,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-  );
+/*
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    return
+  }
 }
+*/
