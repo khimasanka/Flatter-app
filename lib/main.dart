@@ -59,24 +59,39 @@ class MyHomePage extends StatelessWidget {
           backgroundColor: Colors.black87,
         ),
         body: Container(
-          color: Colors.yellowAccent,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Text(
+          height: 200,
+          color: Colors.green,
+          child: Row(
+            children: [
+              const Text(
                 'Text 1',
                 style: TextStyle(fontSize: 20),
               ),
-              Text(
-                'Text 1',
+              const Text(
+                'Text 2',
                 style: TextStyle(fontSize: 20),
               ),
-              Text(
-                'Text 1',
+              const Text(
+                'Text 3',
                 style: TextStyle(fontSize: 20),
               ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text(
+                    'Text 1',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Text(
+                    'Text 2',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Text(
+                    'Text 3',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ],
+              )
             ],
           ),
         ),
